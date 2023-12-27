@@ -197,6 +197,7 @@ class NTRIPClient:
         elif self._reconnect_attempt_count >= self.reconnect_attempt_max:
           self._reconnect_attempt_count = 0
           raise Exception("Reconnect was attempted {} times, but never succeeded".format(self._reconnect_attempt_count))
+          exit(1)
           break
         elif connect_success:
           self._reconnect_attempt_count = 0
